@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block content%}
+
+<h1>Esta es una prueba de timelapse en "HTML-CSS" para el programa de eventos</h1>
+<div class="timeline">
+    {% for expos_det in df1 %}
+    <div class="timeline__component">
+        <div class="timeline__date timeline__date--right">Hora: {{ expos_det.horario}} Fecha: {{expos_det.fecha }}</div>
+    </div>
+    <div class="timeline__middle">
+        <div class="timeline__point"></div>
+    </div>
+    <div class="timeline__component timeline__component--bg">
+        <h2 class="timeline__title">titulo de tema: {{ expos_det.tema }}</h2>
+        <p class="timeline__paragraph">
+            descripcion: {{ expos_det.descripcion }}
+            <br>
+            autor: {{ expos_det.nombre }} {{ expos_det.apellido }} 
+        </p>
+    </div>
+    {% endfor %}
+    <!--  -->
+    <div class="timeline__component timeline__component--bg">
+        <h2 class="timeline__title">Published First Video</h2>
+        <p class="timeline__paragraph">
+            My firts video for yt.
+        </p>
+    </div>
+    <div class="timeline__middle">
+        <div class="timeline__point"></div>
+    </div>
+    <div class="timeline__component">
+        <div class="timeline__date">FECHA2 08, 2021</div>
+    </div>
+    <!--  -->
+    <!--  -->
+    <div class="timeline__component">
+        <div class="timeline__date timeline__date--right">FECHA3 08, 2021</div>
+    </div>
+    <div class="timeline__middle">
+        <div class="timeline__point"></div>
+    </div>
+    <div class="timeline__component timeline__component--bg">
+        <h2 class="timeline__title">Published First Video</h2>
+        <p class="timeline__paragraph">
+            My firts video for yt.
+        </p>
+    </div>
+    <!--  -->
+    <div class="timeline__component timeline__component--bottom timeline__component--bg">
+        <h2 class="timeline__title">Published First Video</h2>
+        <p class="timeline__paragraph">
+            My firts video for yt.
+        </p>
+    </div>
+    <div class="timeline__middle">
+        <div class="timeline__point"></div>
+        <div class="timeline__point timeline__point--bottom"></div>
+    </div>
+    <div class="timeline__component timeline__component--bottom">
+        <div class="timeline__date">FECHA4 08, 2021</div>
+    </div>
+</div>
+
+{% endblock%}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content%}
+
+<h1>😊 Available Functions 😊</h1>
+<span class="border"></span>
+<div class="container-sm">
+    <div class="d-grid gap-2">
+        <h1>User Functions</h1>
+        <a class="btn btn-primary btn-lg" href="/profile">Update your Profile</a>
+        <a class="btn btn-primary btn-lg" href="/asistencias">Mark Assistance</a>
+        <a class="btn btn-primary btn-lg" href="/MisAssists">My Assists</a>
+    {% if session['rol'] == '1' %}
+        <h1>Admin Functions</h1>
+        <a class="btn btn-success btn-lg" href="/InsertProgram">Create, Read, Update or Delete a Event</a>
+        <a class="btn btn-success btn-lg" href="/Users">View Registered Users (And LevelUp)</a>
+    {% endif %}
+    {% if session['rol'] != '3' %}
+        <h1>Exponent Functions</h1>
+        <a class="btn btn-secondary btn-lg" href="/MisExpos">My Exposures</a>
+    {% endif %}
+    </div>
+</div>
+
+{% endblock%}

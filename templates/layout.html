@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/06/8b/eb/068beb5501121c498484a0e3f6fd403c.png" sizes="32x32" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://kit.fontawesome.com/b11650a0a6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0057A3;" id="navbarid";>
+        <div class="container-fluid">
+            <img src="https://i.pinimg.com/originals/06/8b/eb/068beb5501121c498484a0e3f6fd403c.png" alt="#" height="50px">
+            <button id="boton-desplegar" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a class="navbar-brand" href="/">UNMSM 2021</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/program">Program</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#speakers">Invited Speakers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/organizers">Organiers</a>
+                    </li>
+                    <li class="nav-item logged-out" style="display: none;">
+                        <a class="nav-link" data-toggle="modal" data-target="#signupModal" href="#">Sign up</a>
+                    </li>
+                    <li class="nav-item logged-out" style="display: none;">
+                        <a class="nav-link" data-toggle="modal" data-target="#signinModal" href="#">Login</a>
+                    </li>
+                    <li class="nav-item logged-in" style="display: none;">
+                        <a class="nav-link" href="#" id="logout">Logout</a>
+                    </li>
+                    <li class="nav-item logged-in" style="display: none;">
+                        <a class="nav-link" href="/settings" id="logout">Settings</a>
+                    </li>
+                    <div id="userData"></div>
+                </ul>
+                {% if session['usuario'] %}
+                <li class="nav-link" style="color: white; border: solid 1px wheat ;margin-right: 10px;">
+                    User: {% print(session['usuario']) %}
+                </li>
+                {% endif %}
+                <!-- <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form> -->
+            </div>
+        </div>
+    </nav>
+
+    {% block content %} {% endblock %}
+
+    <!-- MODALS -->
+        <!-- MODAL SIGNUP -->
+        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background: #18181b;">
+                <div class="modal-header" class="close" data-dismiss="model" aria-label="Close">
+                    <h5 class="modal-title">Register</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/" id="signup-form">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" id="signup-email" class="form-control" placeholder="Email" required>
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" id="signup-password" class="form-control" placeholder="Password - mayor a 6 caracteres"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                        <p class="errorForm pink-text center-align"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL LOGIN -->
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background: #18181b;">
+                <div class="modal-header" class="close" data-dismiss="model" aria-label="Close">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/" id="login-form" method="POST">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" name="login-email" id="login-email" class="form-control" placeholder="Email" required>
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password </label>
+                            <input type="password" id="login-password" class="form-control" placeholder="Password - mayor a 6 caracteres"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block" id="normalLogin">Login</button>
+                        <button type="button" class="btn btn-primary btn-block" id="googleLogin">Login with Google</button>
+                        <div class="container">
+                            <p class="errorForm pink-text center-align"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOOSTRAP SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <!-- SDK FIREBASE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!-- TODO Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <!-- Don't change the format for any other products. -->
+    <!-- etc. -->
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDfC0GC-YBeXCqvsqDDRYFb7ZFBe6hnWC8",
+            authDomain: "fb-demo-a62c4.firebaseapp.com",
+            projectId: "fb-demo-a62c4",
+            storageBucket: "fb-demo-a62c4.appspot.com",
+            messagingSenderId: "109597240779",
+            appId: "1:109597240779:web:0266c6558d0864d8969a4e"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+    </script>
+
+    <!-- CUSTOM CODE -->
+    <script type=text/javascript src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

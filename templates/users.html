@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content%}
+
+<div class="container">
+    <h3>View Registered Users (And LevelUp)</h3>
+    <span class="border"></span>
+    <div class="table-responsive-sm">
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Author Email</th>
+                <th>Dni or Carnet</th>
+                <th>Profession</th>
+                <th>Rol</th>
+                <th colspan="2">LevelUp Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Users in df %}
+            <tr>
+                <td>{{ Users.nombre }}</td>
+                <td>{{ Users.apellido }}</td>
+                <td>{{ Users.email }}</td>
+                <td>{{ Users.dni }}</td>
+                <td>{{ Users.profesion }}</td>
+                <td>{{ Users.rol }}</td>
+                <td>
+                    <form action="/actionUser" method="POST">
+                        <select class="form-select" name="rol">
+                            <option value selected>Open this select menu</option>
+                            {% for Roles in df1 %}
+                            <option value="{{ Roles.id }}">{{ Roles.rol }}</option>
+                            {% endfor %}
+                        </select>
+                </td>
+                <td>
+                        <input type="hidden" name="email" value="{{ Users.email }}">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+{% endblock%}

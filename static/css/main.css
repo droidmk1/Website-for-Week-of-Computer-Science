@@ -1,0 +1,802 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,100&family=Petemoss&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+body {
+    background-color: #0e0e10;
+    color: white;
+    
+}
+
+.contenedor0 {
+    background-image: url(IMG/UNMSM_Facultad_de_Ciencias_Matematicas.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 89vh;
+    margin-top: 0;
+    position: relative;
+    
+}
+.contenedor0 .titulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+@media (max-width:500px){
+    .contenedor0 .titulo h1{
+        font-size: 30px;
+    }
+    
+    .contenedor1 .temas{
+        font-style: bold;
+        font-size: 20px;
+    }
+    .contenedor1 .typing2{
+        font-size: 30px;
+    }
+    .contenedor1 .typing{
+        font-size: 20px;
+    }
+}
+@media(max-width:1400px){
+    .contenedor1{
+        width: 100%;
+        height: 500px;
+    }
+}
+
+.contenedor1{
+    text-align: center;
+    /* background-image: url(IMG/wallpaperbetter\ 2.jpg); */
+    background-image: url(IMG/fondo2.png);
+    background-position: center center;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    padding: 100px;
+    height: 500px;
+    position: relative;
+}
+
+.contenedor1-0{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    width: 100%;
+    transform: translate(-50% , -50%);
+}
+.contenedor1-0 h1{
+    animation: parpadeo 1.5s infinite alternate-reverse;
+}
+@keyframes parpadeo{
+    0%{
+        opacity: 1;
+        transform: scale(0.9);
+        text-shadow: 2px 2px 2px #166ebb;
+    }
+    100%{
+        opacity: .5;
+        transform: scale(1);
+        text-shadow: 20px 1px 20px #166ebb;
+    }
+}
+
+.contenedor2{
+    text-align: center;
+    min-height: 300px;
+    background-size: cover;
+    position: relative;
+}
+.contenedor2 p{
+    transition: 0.3s linear all;
+    
+}
+.contenedor2 p:hover{
+    transform: scale(1.02);
+    
+}
+.contenedor2 hr{
+    height: 1px;
+    opacity: .1;
+}
+.contenedor2::before{
+    content: '';
+    position: absolute;
+    background: url(IMG/1.png);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: .4;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* transform: translate(-50%,-50%); */
+}
+.contenedor2 .info-conferencia {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+}
+@import url('https://fonts.googleapis.com/css2?family=Shalimar&display=swap');
+.contenedor2 .info-conferencia .descrip{
+    width: 40%;
+    margin-top: 4rem;
+    margin-right: 2rem;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-family: 'Shalimar', cursive;
+}
+.boton-information{
+    display: block;
+    text-align: center;
+    margin: 20px;
+}
+.contenedor3{
+    display: block    ;
+    
+}
+footer{
+    background-color: #0e0e10;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+}
+
+/*--------------------BLOQUE DE PUBLICIDAD(LOGOS)--------------------*/
+.publicidad{
+    background: linear-gradient(black,#0e0e10);
+}
+.publicidad h1{
+    font-size: 50px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+.publicidad .imagenes{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+}
+.publicidad .imagenes .imagen-publicidad{
+    margin: 30px;
+    cursor: pointer;
+    transition: all .2s linear;
+    width: 200px;
+    /* height: 112.61px; */
+}
+.publicidad .imagenes .imagen-publicidad:hover{
+    transform: scale(.9);
+}
+.publicidad .imagenes .imagen-publicidad img{
+    width: 100%;
+}
+/*---------------------ANIMACION DE TEXTO---------------------*/
+h1{
+    filter: none;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 15px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.typing2 {
+    text-align: center;
+    font-size: 55px;
+    font-family: 'Dancing Script', cursive;
+    color:white;
+}
+.typing,
+span{
+    font-size: 30px;
+
+}
+span{
+    color: #166ebb;
+    font-style: bold;
+    
+}
+.typing{
+    color:white;
+
+}
+.px-3 h1{
+    font-size:60px;
+    font-family: 'Dancing Script', cursive;
+    font-style: bold;
+}
+/*----------------------------------------------*/
+h3 {
+    text-align: center;
+}
+
+.content29378 {
+    max-height: 500px;
+    max-height: 500px;
+}
+
+.container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+/*-------------------------ORGANIZADORES------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+.team-section{
+    text-align: center;
+    background-color: black;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+}
+.team-section h1{
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    color: white;
+    font-size: 40px;
+}
+.border{
+    display: block;
+    margin: auto;
+    width: 160px;
+    border: none;
+    height: 5px;
+    background-color: #0057a3;
+    margin-bottom: 40px;
+}
+.slider{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    margin-top: 60px;
+}
+.slide{
+    width: 400px;
+    margin-bottom: 20px;
+    transition: all .3s linear ;
+    
+}
+@media  (max-width:1318px) {
+    .slider{
+        justify-content: space-around;
+    }
+}
+
+.section:target{
+    height: auto;
+}
+
+/*-------------------------------------- PARTE DE ORGANIZADORES(TARJETAS) ------------------------------------*/
+.profile-card{
+    width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    border: solid 1px black;
+    
+}
+.profile-card{
+    animation: giro .2s alternate-reverse ;
+    animation-timing-function: linear;
+    animation-iteration-count: 4;
+    
+}
+@keyframes giro{
+    0%{
+        transform: rotateZ(3deg);
+    }
+    100%{
+        transform: rotateZ(-3deg);
+    }
+}
+.card-header{
+    background: #2c3a472f;
+    padding: 60px 40px;
+}
+
+.pic{
+    display: inline-block;
+    padding: 8px;
+    background: linear-gradient(130deg, #74b9ff, black);
+    margin: auto;
+    border-radius: 50%;
+    background-size: 200% 200%;
+    animation: animated-gradient 2s linear infinite;
+}
+
+@keyframes animated-gradient{
+    25%{
+    background-position: left bottom;
+    }
+    50%{
+    background-position: right bottom;
+    }
+    75%{
+    background-position: right top;
+    }
+    100%{
+    background-position: left top;
+    }
+}
+
+.pic img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name{
+    width: 100%;
+    color: #f2f2f2;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.desc{
+    font-size: 18px;
+    /* color: #e66767; */
+    color: #166ebb;
+}
+
+.sm{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.sm a{
+    color: #f2f2f2;
+    text-decoration: none;
+    width: 56px;
+    font-size: 22px;
+    transition: .3s linear;
+}
+
+.sm a:hover{
+    color: #166ebb;
+}
+
+.contact-btn{
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 50px;
+    color: #166ebb;
+    border: 2px solid #166ebb;
+    border-radius: 6px;
+    margin-top: 16px;
+    transition: .3s linear;
+}
+
+.contact-btn:hover{
+    background: #166ebb;
+    color: #f2f2f2;
+}
+/*------------------------------------------------------------------*/
+
+.formulario {
+    margin: auto;
+    margin-top: 30px;
+    width: 600px;
+    padding: 15px;
+    background: #18181b;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+/*--------------------BOTON MORE INFORMATION--------------------------*/
+.send{
+    background-color: #0057a3;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid #0057a3;
+    cursor: pointer;
+    transition: .3s linear;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.send:hover{
+    color: #0057a3;
+    background:none;
+    border: 2px solid #0057a3;
+}
+/*---------------------PRE FOOTER V:----------------*/
+.footer-0{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 400px;
+}
+.footer-1{
+    filter: grayscale(80%);
+}
+.footer-1 img{
+    width: 200px;
+    margin-left: 100px;
+    animation: flotar 1s infinite ;
+    animation-direction: alternate-reverse;
+}
+@keyframes flotar{
+    0%{
+        transform: scale(1.02);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.footer-2 {
+    width: 50%;
+    margin-right: 100px;
+    font-size: 20px;
+}
+.footer-3{
+    background-color: black;
+    padding: 30px;
+    text-align: center;
+    font-style: italic;
+    width: 100%;
+}
+@media (max-width:800px ){
+    .footer-0{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer-1 img{
+        width: 200px;
+        margin-left: 0px;
+        margin-top:20px ;
+    }
+    .footer-2 {
+        width: 100%;
+        margin-top:30px ;
+        margin-right: 0px;
+        font-size: 20px;
+    }
+    .contenedor2 .info-conferencia {
+        display: flex;
+        flex-direction: row;
+        justify-content: center
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Shalimar&display=swap');
+    .contenedor2 .info-conferencia .descrip{
+        width: 70%;
+        margin-top: 4rem;
+        margin-right: 0;
+        font-size: 25px;
+        text-align: center;
+        font-family: 'Shalimar', cursive;
+    }
+    
+}
+/*-----------------------FOOTER---------------------*/
+.footer{
+    background-color: black;
+    margin-top: 80px;
+    padding: 80px;
+}
+.redes{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.redes h2{
+    color: white;
+    margin: 10px;
+    letter-spacing: 2px;
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+}
+.redes a{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    background-color: #0d2033;
+    color: white;
+    font-size: 18px ;
+    border-radius: 10px;
+    margin: 10px;
+}
+.redes a:hover{
+    color: #0057A3;
+}
+
+.errorForm{
+    color: #ff0000;
+    text-align: center;
+}
+
+/*--------------------TIMELINE--------------------*/
+.program{
+    margin: 0;
+    padding: 20px;
+}
+.timeline{
+    position: relative;
+    margin: 50px auto;
+    padding: 40px 0;
+    width: 1000px;
+    box-sizing: border-box;
+}
+.timeline::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #c5c5c5;
+}
+.timeline ul{
+    margin:0;
+    padding: 0;
+
+}
+.timeline ul li{
+    line-height: normal;
+    list-style: none;
+    position: relative;
+    width: 50%;
+    padding: 20px 40px ;
+    box-sizing: border-box;
+    
+}
+
+.timeline ul li:nth-child(odd){
+    float: left;
+    text-align: right;
+    clear: both;
+}
+.timeline ul li:nth-child(even){
+    float: right;
+    text-align: left;
+    clear: both;
+}
+.timeline ul li:nth-child(odd) h3{
+    text-align: right;
+}
+.timeline ul li:nth-child(even) h3{
+    text-align: left;
+}
+.content{
+    padding-bottom: 20px;
+}
+.timeline ul li:nth-child(odd)::before{
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: -6px;
+    width: 10px;
+    height: 10px;
+
+    background: rgba(148, 139, 142,1);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(148, 139, 142,0.2);
+}
+.timeline ul li:nth-child(even)::before{
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: -4px;
+    width: 10px;
+    height: 10px;
+
+    background: rgba(148, 139, 142,1);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(148, 139, 142,0.2);
+}
+.timeline ul li h3{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color:  0 0 0 3px rgb(148, 139, 142);
+}
+.timeline ul li p{
+    margin: 20px 0 0 ;
+    padding-bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgb(255 255 255 / 70%);
+    border-radius: 10px;
+    text-align: justify;
+    padding: 20px;
+    line-height: 1.5;
+}
+.timeline ul li .time h4{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+.timeline ul li:nth-child(odd) .time{
+    position: absolute;
+    top: 12px;
+    right: -185px;
+    margin: 0;
+    padding: 8px 16px;
+    background: rgb(148, 139, 142);
+    color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 0 0 3px rgb(148, 139, 142);
+}
+.timeline ul li:nth-child(even) .time{
+    position: absolute;
+    top: 12px;
+    left: -185px;
+    margin: 0;
+    padding: 8px 16px;
+    background: rgb(148, 139, 142);
+    color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 0 0 3px rgb(148, 139, 142);
+}
+
+@media (max-width: 1000px){
+
+    .timeline ul li .content h3{
+        text-align: left;
+        font-style: none;
+        font-size: 20px;
+    }
+    .timeline{
+        width: 100%;
+        padding-bottom: 0;
+    }
+    .timeline::before{
+        left: 20px;
+    }
+    .timeline ul li:nth-child(odd),
+    .timeline ul li:nth-child(even){
+        width: 100%;
+        text-align: left;
+        padding-left: 50px;
+        padding-bottom: 50px;
+    }
+    .timeline ul li:nth-child(even)::before,
+    .timeline ul li:nth-child(odd)::before{
+        top: -18px;
+        left: 16px;
+    }
+    .timeline ul li:nth-child(odd) .time,
+    .timeline ul li:nth-child(even) .time{
+        top: -30px;
+        left: 50px;
+        right: inherit;
+    }
+}
+
+/*------------------PARA ANIMACIION AL BAJAR EL SCROLL---------------*/
+.animado{
+    opacity: 0;
+    transition: all 1s ;
+}
+.animado2{
+    opacity: 0;
+    transition: all 1s ;
+}
+.mostrarArriba{
+    animation: mostrarArriba 1s;
+}
+@keyframes mostrarArriba{
+    0%{
+        transform: translateX(-400px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+/*--------------------- ANIMACION PARA EL NAVBAR(CAMBIO DE FONDO )*/
+.fijar{
+    position: sticky;
+    z-index: 900;
+    top: 0;
+}
+.navbar{
+    transition-duration: .5s;
+    transition-property: position , background-color;
+}
+.navbar-brand ul{
+    margin-right: -700;
+}
+.collapsing{
+    text-align: center;
+    /* background-color: rgba(0, 0, 0, 0.514); */
+    background-color: #0057a39c;
+}
+.show{
+    text-align: center;
+    
+    /* background-color: rgba(0, 0, 0, 0.514);  */
+    background-color: #0057a39c;
+}
+
+
+/*----------------------------------BLOQUE DE SPEAKERS--------------------------------*/
+.speakers{
+    background:linear-gradient(black, #18181b, black);
+    padding-top: 50px;
+    min-height: 100vh;
+}
+.speakers h1{
+    padding-bottom: 50px;
+
+}
+.blogspots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blog-posts{
+    width: min(1200px, 100%);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.post{
+    width: calc(33% - 10px);
+    overflow: hidden;
+}
+.post-img{
+    width: 100%;
+    border-radius: 6px;
+    transition:  .3s linear;
+    width: 100%;
+    height: 250px;
+}
+.post-content{
+    background-color: #ffffffdd;
+    margin: 0 20px;
+    padding: 30px;
+    border-radius: 6px;
+    transform: translateY(-60px);
+    transition: .3s linear;
+}
+.post-content h3{
+    font-size: 16px;
+    text-align: right;
+    margin-bottom:10px ;
+    color: black;
+}
+p.date{
+    font-weight: 700;
+}
+.date{
+    font-size: 15px;
+    font-style:italic;
+    color: #166ebb;
+}
+.post:hover .post-img{
+    transform: translateY(20px);
+}
+.post:hover .post-content{
+    transform: translateY(-80px);
+}
+@media screen and (max-width:1200px ) {
+    .blog-spots{
+        justify-content: center;
+    }
+    .post{
+        width: min(600px, 100%);
+        margin: auto;
+    }
+}

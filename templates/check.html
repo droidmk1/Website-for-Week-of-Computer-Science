@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content%}
+<h1>Check your Attendance</h1>
+<span class="border"></span>
+<div class="container">
+        <form action="/Marcar_asistencia" method="POST">
+            <h3>Question 1: {{ pregunta1 }}</h3>
+            <div class="form-floating" style="padding-bottom: 30px;">
+                <select class="form-select" name="respuesta1" aria-label="Floating label select example" required>
+                    <option value selected>Open this select menu</option>
+                    <option value="{{ p1_alter1 }}">{{ p1_alter1 }}</option>
+                    <option value="{{ p1_alter2 }}">{{ p1_alter2 }}</option>
+                </select>
+                <label for="floatingSelect" style="color: black;">Answer 1</label>
+            </div>
+            <h3>Question 2: {{ pregunta2 }}</h3>
+            <div class="form-floating" style="padding-bottom: 30px;">
+                <select class="form-select" name="respuesta2" aria-label="Floating label select example" required>
+                    <option value selected>Open this select menu</option>
+                    <option value="{{ p2_alter1 }}">{{ p2_alter1 }}</option>
+                    <option value="{{ p2_alter2 }}">{{ p2_alter2 }}</option>
+                </select>
+                <label for="floatingSelect" style="color: black;">Answer 2</label>
+            </div>
+            <div class="d-grid gap-2">
+                <input type="hidden" name="id_expo" value="{{ id_expo }}">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+</div>
+{% endblock%}

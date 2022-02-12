@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content%}
+
+    <div class="program">
+        <main class="px-3">
+            <h1>"Program"</h1>
+            <span class="border"></span>
+            <div class="timeline">
+                <ul>
+                    {% for Expos in df %}
+                    <li>
+                        <div class="content">
+                            <h3>{{ Expos.tema }}</h3>
+                            <p>{{ Expos.descripcion }}</p>
+                        </div>
+                        <div class="time">
+                            <h4>{{ Expos.fecha }} - {{ Expos.horario }}</h4>
+                        </div>
+                        
+                    </li>
+                    {% endfor %}
+                    <div style="clear:both;"></div>
+                </ul>
+            </div>
+            <br><br>
+            <div class="boton-information">
+                <p >
+                    <a href="#" ><button type="submit" class="send">More information</button></a>
+                </p>
+            </div>
+        </main>
+    </div>
+    <div class="footer-3">
+        <p>Page Event for: <a href="https://www.unmsm.edu.pe" class="text-white">UNMSM</a>, by <a
+        href="https://twitter.com/#" class="text-white">@team_β</a>.<br> &copy; 2021 - All rights reserved. </p>
+    </div>
+    
+
+{% endblock%}

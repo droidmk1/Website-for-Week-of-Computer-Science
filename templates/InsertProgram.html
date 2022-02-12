@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block content%}
+
+<h1>Insert Program</h1>
+<span class="border"></span>
+<div class="container">
+    <form action="/UpdateProgram" method="POST" class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">Title:</label>
+            <input type="text" name="tema" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Description:</label>
+            <textarea name="descripcion" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">Time:</label>
+            <input type="time" name="horario">
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">Date:</label>
+            <input type="date" name="fecha">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Author Email:</label>
+            <input type="text" name="email_autor" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <h2>For Question "1"</h2>
+            <label class="form-label">1. Question:</label>
+            <input type="text" name="pregunta1" class="form-control">
+            <label class="form-label">1. Correct:</label>
+            <input type="text" name="correct_preg1" class="form-control">
+            <label class="form-label">1. Incorrect:</label>
+            <input type="text" name="incorrect_preg1" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <h2>For Question "2"</h2>
+            <label class="form-label">2. Question:</label>
+            <input type="text" name="pregunta2" class="form-control">
+            <label class="form-label">2. Correct:</label>
+            <input type="text" name="correct_preg2" class="form-control">
+            <label class="form-label">2. Incorrect:</label>
+            <input type="text" name="incorrect_preg2" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+<div class="container-fluid">
+    <h2>Scheduled Events </h2>
+    <div class="table-responsive-sm">
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Time</th>
+                    <th>Date</th>
+                    <th>Author Email</th>
+                    <th>Assists Activated</th>
+                    <th colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for Expos in df %}
+                <tr>
+                    <td>{{ Expos.tema }}</td>
+                    <td>{{ Expos.descripcion }}</td>
+                    <td>{{ Expos.horario }}</td>
+                    <td>{{ Expos.fecha }}</td>
+                    <td>{{ Expos.email_autor }}</td>
+                    <td>{{ Expos.asistencia }}</td>
+                    <td>
+                        <form action="/EditExpo" method="POST">
+                            <input type="hidden" name="id_expo" value="{{ Expos.id_expo }}">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/DeleteExpo" method="POST">
+                            <input type="hidden" name="id_expo" value="{{ Expos.id_expo }}">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/update_asistencias" method="POST">
+                            <input type="hidden" name="id_expo" value="{{ Expos.id_expo }}">
+                            <input type="hidden" name="asistencia" value="{{ Expos.asistencia }}">
+                            <button type="submit" class="btn btn-warning">Assists</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock%}

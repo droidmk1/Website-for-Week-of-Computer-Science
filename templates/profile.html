@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content%}
+
+<h1> {% print(session['NombreUsuario']) %}</h1>
+<span class="border"></span>
+<div class="container">
+    <form action="/UpdateProfile" method="POST" class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">Name: (*)</label>
+            <input type="text" name="nombre" class="form-control" value="{{ nombre }}" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Last Name: (*)</label>
+            <input type="text" name="apellido" class="form-control" value="{{ apellido }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">DNI or Carnet: (*)</label>
+            <input type="number" name="dni" class="form-control" value="{{ dni }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Profession: (Optional)</label>
+            <input type="text" name="profesion" class="form-control" value="{{ profesion }}">
+        </div>
+        <button type="submit" class="btn btn-success">Upgrade</button>
+    </form>
+</div>
+
+{% endblock%}

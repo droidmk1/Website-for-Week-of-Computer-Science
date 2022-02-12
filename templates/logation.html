@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content%}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="container">
+    <p>{{ message }}</p>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+    <!-- pages -->
+    <div class="d-flex h-100 text-center text-white">
+        <div class="container">
+            <main class="px-3">
+                <h1>"Logation"</h1>
+            </main>
+        </div>
+    </div>
+    <!--endpages-->
+
+<form action="/login" class="formulario" method="POST">
+    <div class="container">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+{% endblock%}
